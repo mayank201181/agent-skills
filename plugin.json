@@ -1,0 +1,13 @@
+{
+  "name": "mayank-studyguide-skills",
+  "displayName": "Study Guide & Question Bank Builder",
+  "version": "1.0.0",
+  "description": "End-to-end builder for interactive school study-guide and question-bank web dashboards with 4-layer blind-solver cross-checking, persistent bottom dock, zero-login iPad localStorage persistence, sitcom TV hub, and Vercel deployment.",
+  "author": "mayank201181",
+  "repository": "https://github.com/mayank201181/agent-skills",
+  "suggestedPrompts": [
+    "Use studyguide to build a new Year 9 Physics study guide and question bank on Vercel",
+    "Audit an existing study guide repo with the 4-layer blind-solver and grader checklist",
+    "Add a new syllabus topic, drills, interactive widget, and sitcom episode to a study guide"
+  ]
+}
