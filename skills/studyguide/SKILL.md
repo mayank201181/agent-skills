@@ -29,8 +29,16 @@ reference an old subject repo manually.
   - Keep optional cloud sign-in / PIN parent dashboard tucked discretely inside the top-right profile menu (`☁️ Sign in / create account`) for families who opt into Vercel Blob sync.
 - **Persistent Bottom Navigation Dock (All Screen Sizes — Mobile, Tablet & Desktop)**:
   - Render a fixed bottom dock (`fixed inset-x-0 bottom-0`, **never `md:hidden`**) with `<main className="... pb-28">` clearance and floating mascots positioned at `bottom-20`:
-    `🏠 Home (/) · 📚 Topics (/topics) · 🎬 Watch (/watch) · 📺 Sitcom (/episodes) · 🎯 Daily 5 (/daily) · 🔁 Review (/review) · 📈 Progress (/progress)`
-  - Also surface `📺 Sitcom` (`/episodes`) and `🎬 Watch` (`/watch`) in the top header bar on both narrow and wide viewports so the all-episodes binge hub is always one tap away.
+    `🏠 Home (/) · 📚 Topics (/topics) · 🎬 Watch (/watch) · 📺 Sitcom (/episodes) · 📱 Shorts (/shorts) · 🎯 Daily 5 (/daily) · 🔁 Review (/review) · 📈 Progress (/progress)`
+  - Also surface `📺 Sitcom` (`/episodes`), `📱 Shorts` (`/shorts`), and `🚨 Cram` (`/cram`) in the top header bar on both narrow and wide viewports so video revision and pre-test cramming are always one tap away.
+- **Custom Multi-Topic & Single-Topic Exam Cram Sheets (`/cram` + `?tab=cram`)**:
+  - Every dashboard must include **both** a per-topic `🚨 Exam Cram` tab (`?tab=cram` inside `TopicView`) **and** a global `/cram` Custom Test Cram Builder where a learner can tick **only the 2, 3, or 4 topics** in an upcoming school assessment (persisted in `localStorage`, printable via `🖨️ Print / Save PDF`) displaying:
+    1. `⚠️ What Loses Marks in Exams` (`examMistakes` + real paper `commonError` traps)
+    2. `✅ What Examiners Award Marks For` (tickable `mustKnow` checklist)
+    3. `🕵️ Don't Write This → Write This` (`misconceptions`)
+    4. `🧩 Memory Tricks` (`mnemonics`) & `📖 Must-Memorise Definitions/Formulas`
+- **Vertical `9:16` Concept Shorts (`/shorts` + `?tab=shorts`)**:
+  - Slice each episode's 5–8 individual concept acts/chapters into a `lib/shorts.ts` manifest (`<= 175s` each) powering both a global `/shorts` `9:16` vertical swipe/reel hub (`Auto-next`, live synced captions, key takeaways, `localStorage` `Watched ✓` tracking) and a per-topic `📱 Shorts` tab (`?tab=shorts`).
 - **Fast Scaffolding (Laptop OR Cloud VM — Zero Laptop Needed)**:
   - Run [scaffold-from-v2.sh](./scripts/scaffold-from-v2.sh) `<new-repo-dir>` (uses local `/Users/mayankrawat/Downloads/year8-workspace/Year8geography` if available, or automatically runs `git clone --depth 1 --filter=blob:none https://github.com/mayank201181/Year8geography.git` when running in a Cloud VM such as Google Jules `jules.google` or Claude Web `claude.ai/code`; pass `https://github.com/mayank201181/Year8chinese.git` as 2nd arg for language subjects) to copy ONLY the hardened engine skeleton (~300 KB, stripping `.mp4` videos and old subject topics/READMEs so zero old subject icons or exam IDs leak).
 - **Gemini Web / Mobile Canvas Fallback (`gemini.google.com` without a Cloud VM)**:
